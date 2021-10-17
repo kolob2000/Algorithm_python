@@ -11,11 +11,11 @@ if a > b:
     f = g
     g = e
 
-c, d = map(ord, input('введите два символа через пробел - ').split())
+c, d = map(ord, input('введите два символа через пробел - ').lower().split())
 if c > d:
     e = c
     c = d
     d = e
-print(chr(r.randint(c, d)))
 print(r.randint(a, b))
 print(r.uniform(f, g))
+print(chr(r.randint(c, d)))

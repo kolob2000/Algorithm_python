@@ -1,16 +1,24 @@
+import os
+
 while True:
     users_input = input('Введите два числа и знак операции через пробел либо 0 для завершения - ').split()
     match users_input:
         case a, b, '+' as c if str.isdigit(a) and str.isdigit(b):
-            print(int(a) + int(b))
+            os.system('cls||clear')
+            print('Результат: ', int(a) + int(b))
         case a, b, '-' as c if str.isdigit(a) and str.isdigit(b):
-            print(int(a) - int(b))
+            os.system('cls||clear')
+            print('Результат: ', int(a) - int(b))
         case a, b, '*' as c if str.isdigit(a) and str.isdigit(b):
-            print(int(a) * int(b))
+            os.system('cls||clear')
+            print('Результат: ', int(a) * int(b))
         case a, b, '/' as c if str.isdigit(a) and str.isdigit(b):
-            print(int(a) / int(b))
-        case '0', :
+            os.system('cls||clear')
+            print('Результат: ', int(a) / int(b))
+        case '0',:
+            os.system('cls||clear')
             print('Досвидания!')
             exit(0)
         case _:
+            os.system('cls||clear')
             print('Неверный ввод!')

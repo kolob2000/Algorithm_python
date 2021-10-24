@@ -12,3 +12,4 @@ for j, i in enumerate(array, 0):  # и также считать индекс о
 
 print(sorted(array))
 print(f'Index:{index} \n Element: {element} ')
+

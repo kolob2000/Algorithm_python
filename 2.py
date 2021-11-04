@@ -47,3 +47,4 @@ if __name__ == '__main__':
 
     print(f'Sum of {"".join(first_hex)} + {"".join(second_hex)} = {decimal_to_hex(summ)} ')
     print(f'Multiple of {"".join(first_hex)} * {"".join(second_hex)} = {decimal_to_hex(multiple)} ')
+

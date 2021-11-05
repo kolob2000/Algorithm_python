@@ -43,10 +43,11 @@ def fibonachi_recursive_2(n):
 
 
 def fibonachi_cycle(n):
-    prev = 1
+    prev = 0
     nexxt = 1
-    print(1, '   \t', nexxt)
-    for _ in range(2, n + 1):
+    print(1, '   \t', prev)
+    print(2, '   \t', nexxt)
+    for _ in range(3, n + 1):
         prev, nexxt = nexxt, nexxt + prev
         print(_, '   \t', nexxt)
 

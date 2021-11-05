@@ -17,10 +17,12 @@ class Array:
                     self.array[j], self.array[j - 1] = self.array[j - 1], self.array[j]
                 count_iter += 1
             count += 1
-        print('Количество итераций - ', count_iter)
+        print('Cycle quantity - ', count_iter)
+        return self.array
 
 
 array = Array([random.randint(1, 100) for _ in range(20)])
-print(array)
-array.bubble_sort()
-print(array)
+print(f'Not sorted array: \n{array}')
+
+print(f'\nSorted array with Bubble sort:')
+print(array.bubble_sort())

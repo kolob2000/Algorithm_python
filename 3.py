@@ -1,9 +1,9 @@
 import random
 
-array = list(random.sample([_ for _ in range(100)], 25))
+array = list(random.sample([_ for _ in range(100)], 15))
 print('------------------- Initial data --------------------')
-print(f'Origin array - {array}')
-print(f'Sorted array - {sorted(array)}')
+# print(f'Origin array - {array}')
+# print(f'Sorted array - {sorted(array)}')
 print(f'Median by sorting - {sorted(array)[len(array) // 2]}')
 ############################################################
 # алгоритм разработанный по определению медианы - минимальная сумма растояний...
@@ -59,25 +59,38 @@ cycle = 1
 def quick_select(array: list, count_left=0, count_right=0, length_sides=0):
     if length_sides == 0:
         length_sides = len(array) // 2
-    index = 0
+    pivot = 0
     left_part = []
     right_part = []
     global cycle
     cycle += 1
     for i in array:
-        if array[index] > i:
+        if array[pivot] > i:
             left_part.append(i)
-        elif array[index] < i:
+        elif array[pivot] < i:
             right_part.append(i)
+
     if count_left + len(left_part) == length_sides or count_right + len(right_part) == length_sides:
-        return array[index]
+        return array[pivot]
+    elif len(left_part) + count_left + 1 == length_sides:
+        median = right_part[0]
+        for i in right_part:
+            if i < median:
+                median = i
+            return median
+    elif len(right_part) + count_right + 1 == length_sides:
+        median = left_part[0]
+        for i in left_part:
+            if i > median:
+                median = i
+            return median
     elif len(left_part) + count_left < length_sides:
         count_left += len(left_part)
-        right_part.append(array[index])
+        right_part.append(array[pivot])
         return quick_select(right_part, count_left, count_right, length_sides)
     else:
         count_right += len(right_part)
-        left_part.append(array[index])
+        left_part.append(array[pivot])
         return quick_select(left_part, count_left, count_right, length_sides)
 
 

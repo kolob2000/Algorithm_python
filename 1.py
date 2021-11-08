@@ -13,7 +13,7 @@ class Array:
         count_iter = 0
         for _ in range(len(self.array) - 1):
             for j in range(len(self.array) - 1, count, -1):
-                if self.array[j - 1] > self.array[j]:
+                if self.array[j - 1] < self.array[j]:
                     self.array[j], self.array[j - 1] = self.array[j - 1], self.array[j]
                 count_iter += 1
             count += 1
@@ -21,7 +21,7 @@ class Array:
         return self.array
 
 
-array = Array([random.randint(1, 100) for _ in range(20)])
+array = Array([random.randint(-100, 100) for _ in range(20)])
 print(f'Not sorted array: \n{array}')
 
 print(f'\nSorted array with Bubble sort:')

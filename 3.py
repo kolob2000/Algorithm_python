@@ -59,7 +59,7 @@ cycle = 1
 def quick_select(array: list, count_left=0, count_right=0, length_sides=0):
     if length_sides == 0:
         length_sides = len(array) // 2
-    pivot = 0
+    pivot = random.randint(0, len(array) - 1)
     left_part = []
     right_part = []
     global cycle
@@ -77,13 +77,13 @@ def quick_select(array: list, count_left=0, count_right=0, length_sides=0):
         for i in right_part:
             if i < median:
                 median = i
-            return median
+        return median
     elif len(right_part) + count_right + 1 == length_sides:
         median = left_part[0]
         for i in left_part:
             if i > median:
                 median = i
-            return median
+        return median
     elif len(left_part) + count_left < length_sides:
         count_left += len(left_part)
         right_part.append(array[pivot])
